@@ -37,11 +37,13 @@
                              </li>
                              <br>
                              {% endfor %} -->
+                        <br>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="{{ url_for('home') }}">Home</a>
                         </li>
+                        <br>
                         <li class="nav-item">
-                            <script src="{{ url_for("static", filename="js/encrypted_mailto.js") }}"></script>{{ contact_message }}</a>
+                            <script src="{{ url_for("static", filename="js/encrypted_mailto_navbar.js") }}"></script>
                 <noscript><a class="nav-link js-scroll-trigger">Please enable Javascript to write an e-mail</a></noscript>
                         </li>
                     </ul>
