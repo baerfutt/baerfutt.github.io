@@ -1,71 +1,103 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block page_title %}{{ title }}{% endblock %}</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+<html lang="en">
 
-    
+    <head>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for("static", filename="vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block page_title %}{{ title }}{% endblock %}</title>
+        <meta name="description" content="{{ description }}">
+        <meta name="author" content="{{ author }}">
+        
+        <!-- Bootstrap core CSS -->
+        <link href="{{ url_for("static", filename="vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link href="{{ url_for("static", filename="vendor/font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
+        <!-- Custom styles for this template -->
+        <link href="{{ url_for("static", filename="css/freelancer.min.css") }}" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="{{ url_for("static", filename="vendor/font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for("static", filename="css/freelancer.min.css") }}" rel="stylesheet">
+    </head>
 
-</head>
+    <body id="page-top">
 
-<body id="page-top">
-    <!-- <body class="box"> -->
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ name }}</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('home') }}">Home</a></li>
-            <li class="nav-item">
-                <script src="{{ url_for("static", filename="js/encrypted_mailto_freelancer.js") }}"></script>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="{{ url_for('home') }}">{{ name }}</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        {# some day maybe... #}
+                        <!-- {% for item in structure %}
+                             <li class="nav-item">
+                             <a class="nav-link js-scroll-trigger" href="#{{ item }}">item</a>
+                             </li>
+                             <br>
+                             {% endfor %} -->
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{{ url_for('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <script src="{{ url_for("static", filename="js/encrypted_mailto.js") }}"></script>{{ contact_message }}</a>
                 <noscript><a class="nav-link js-scroll-trigger">Please enable Javascript to write an e-mail</a></noscript>
-            </li>
-          </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="masthead">
+            <div class="container">
+                {% if header_pic %}
+                <img class="img-fluid" src="{{ url_for("static", filename=header_pic) }}" alt="{{ header_pic_alt if header_pic_alt }}"> 
+                {% endif %}
+                <div class="name">
+                    <h1>{{ date ~ ':' if date}} {{ title }}</h1>
+                    <hr class="star-light">
+                </div>
+            </div>
+        </header>
+
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <div class="modal-body">
+                        <div class="content" role="main">
+                            {% block content %}{% endblock %}
+                        </div> 
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
 
-    <div class="{% block content_class %}container{% endblock content_class %}">
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="content" role="main">
-            {% block content %}{% endblock %}
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+        <div class="scroll-top d-lg-none">
+            <a class="btn btn-primary js-scroll-trigger" href="#page-top">
+                <i class="fa fa-chevron-up"></i>
+            </a>
         </div>
 
-    </div><!-- end container -->
-    <!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ url_for("static", filename="vendor/jquery/jquery.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="vendor/popper/popper.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="vendor/bootstrap/js/bootstrap.min.js") }}"></script>
+        {# footer #}
+        {% include "footer.html" %}
 
-    <!-- Plugin JavaScript -->
-    <script src="{{ url_for("static", filename="vendor/jquery-easing/jquery.easing.min.js") }}"></script>
+        <!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="{{ url_for("static", filename="vendor/jquery/jquery.min.js") }}"></script>
+        <script src="{{ url_for("static", filename="vendor/popper/popper.min.js") }}"></script>
+        <script src="{{ url_for("static", filename="vendor/bootstrap/js/bootstrap.min.js") }}"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="{{ url_for("static", filename="js/jqBootstrapValidation.js") }}"></script>
-    <!-- <script src="{{ url_for("static", filename="js/contact_me.js") }}"></script>
-    -->
-    <!-- Custom scripts for this template -->
-    <script src="{{ url_for("static", filename="js/freelancer.min.js") }}"></script>
-</body>
+        <!-- Plugin JavaScript -->
+        <script src="{{ url_for("static", filename="vendor/jquery-easing/jquery.easing.min.js") }}"></script>
+
+        <!-- Contact Form JavaScript -->
+        <script src="{{ url_for("static", filename="js/jqBootstrapValidation.js") }}"></script>
+        <!-- <script src="{{ url_for("static", filename="js/contact_me.js") }}"></script>
+        -->
+        <!-- Custom scripts for this template -->
+        <script src="{{ url_for("static", filename="js/freelancer.min.js") }}"></script>
+    </body>
 </html>

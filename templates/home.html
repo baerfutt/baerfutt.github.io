@@ -3,227 +3,167 @@
 
   <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block page_title %}{{ title }}{% endblock %}</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{% block page_title %}{{ title }}{% endblock %}</title>
+      <meta name="description" content="{{ description }}">
+      <meta name="author" content="{{ author }}">
 
-    
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for("static", filename="vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="{{ url_for("static", filename="vendor/font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for("static", filename="css/freelancer.min.css") }}" rel="stylesheet">
-    <!-- <link href="{{ url_for("static", filename="css/freelancer.css") }}" rel="stylesheet">
-    -->
+      <!-- Bootstrap core CSS -->
+      <link href="{{ url_for("static", filename="vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+      <!-- Custom fonts for this template -->
+      <link href="{{ url_for("static", filename="vendor/font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
+      <!-- Custom styles for this template -->
+      <!-- <link href="{{ url_for("static", filename="css/freelancer.min.css") }}" rel="stylesheet"> -->
+      <link href="{{ url_for("static", filename="css/freelancer.css") }}" rel="stylesheet">
+      
   </head>
 
   <body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ name }}</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-              <!-- <li class="nav-item"> -->
-              <!-- <a class="nav-link js-scroll-trigger" href="#portfolio">Accomplishments</a> -->
-              <!-- </li> -->
-              <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#upcoming">Upcoming</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#recent">Recent</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Info</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+          <div class="container">
+              <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ name }}</a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  Menu
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ml-auto">
+                      <!-- <li class="nav-item"> -->
+                      <!-- <a class="nav-link js-scroll-trigger" href="#portfolio">Accomplishments</a> -->
+                      <!-- </li> -->
+                      <li class="nav-item">
+                          <a class="nav-link js-scroll-trigger" href="#upcoming">Upcoming</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link js-scroll-trigger" href="#recent">Recent</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link js-scroll-trigger" href="#about">Info</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
 
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <img class="img-fluid" src="{{ url_for("static", filename=header_pic) }}" alt="">
-        <div class="intro-text">
-          <span class="name">{{ name }}</span>
-          <hr class="star-light">
-          <span class="skills">Natural movement for Humans</span>
-        </div>
-      </div>
-    </header>
+      <!-- Header -->
+      <header class="masthead">
+          <div class="container">
+              {% if header_pic %}
+              <img class="img-fluid" src="{{ url_for("static", filename=header_pic) }}" alt="{{ header_pic_alt if header_pic_alt }}"> 
+              {% endif %}
+              <div class="intro-text">
+                  <span class="name">{{ name }}</span>
+                  <hr class="star-light">
+                  <span class="skills">Natural movement for Humans</span>
+              </div>
+          </div>
+      </header>
 
-    <!-- Placeholder for {{ cards }} js stuff -->
+      <!-- Placeholder for {{ cards }} js stuff -->
 
-    <section class="success" id="upcoming">
-        <div class="container">
-            <h2 class="text-center">Upcoming</h2>
-            <hr class="star-light">
-            <div class="row">
-                <div class="col-lg-4 ml-auto text-center">
-                    {% for event in events %}
-                    <a class="btn btn-lg btn-outline" href="{{ url_for('page', path=event.path) }}">
-                        {{ event.meta.date }}
-                        {{ event.meta.title }}
-                    </a>
-                    <br>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="success" id="recent">
-        <div class="container">
-            <h2 class="text-center">Recent Events</h2>
-            <hr class="star-light">
-            <div class="row text-center">
-                <div class="col-lg-4 ml-auto text-center">
-                    {% for event in past_events %}
-                    <a class="btn btn-lg btn-outline text-center" href="{{ url_for('page', path=event.path) }}">
-                        {{ event.meta.date }}
-                        {{ event.meta.title }}
-                    </a>
-                    <br>
-                    {% endfor %}
-                    <a class="btn btn-lg btn-outline text-center" href="{{ url_for('archive') }}">
-                      Archive
-                    </a>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </section>
+      <section class="success" id="upcoming">
+          <div class="container">
+              <h2 class="text-center">Upcoming</h2>
+              <hr class="star-light">
+              <div class="row text-center">
+                  <div class="col-lg mx-auto">
+                      {% for event in upcoming %}
+                      <a class="btn btn-lg btn-outline" href="{{ url_for('event', path=event.path) }}">
+                          {{ event.meta.date }}:
+                          {{ event.meta.title }}
+                      </a>
+                      <br>
+                      {% endfor %}
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+      <section class="success" id="recent">
+          <div class="container">
+              <h2 class="text-center">Recent Events</h2>
+              <hr class="star-light">
+              <div class="row text-center">
+                  <div class="col-lg mx-auto">
+                      {% for event in past_events %}
+                      <a class="btn btn-lg btn-outline" href="{{ url_for('event', path=event.path) }}">
+                          {{ event.meta.date }}:
+                          {{ event.meta.title }}
+                      </a>
+                      <br>
+                      {% endfor %}
+                      <a class="btn btn-lg btn-outline" href="{{ url_for('archive') }}">
+                          Archive
+                      </a>
+                      <br>
+                  </div>
+              </div>
+          </div>
+      </section>
 
-    <!-- About Section -->
-    <section class="success" id="about">
-      <div class="container">
-        <h2 class="text-center">Info</h2>
-        <hr class="star-light">
-        <div class="row text-center">
-            <div class="col-lg-4 ml-auto">
-                {% for page in info %}
-                <a class="btn btn-lg btn-outline" href="{{ url_for('info', path=page.path) }}">
-                    {{ page.meta.title }}
-                </a>
-                <br>
-                {% endfor %}
-                <a class="btn btn-lg btn-outline" href="https://xeroshoes.com/go/bare">Buy XeroShoes</a>
-                <br>
-            </div>
-        </div>
-      </div>
-    </section>
+      <!-- About Section -->
+      <section class="success" id="about">
+          <div class="container">
+              <h2 class="text-center">Info</h2>
+              <hr class="star-light">
+              <div class="text-center">
+                  <div class="row text-center">
+                      <div class="col-lg mx-auto">
+                          {% for page in info %}
+                          <a class="btn btn-lg btn-outline" href="{{ url_for('info', path=page.path) }}">
+                              {{ page.meta.title }}
+                          </a>
+                          <br>
+                          {% endfor %}
+                          <a class="btn btn-lg btn-outline" href="https://xeroshoes.com/go/bare">Buy XeroShoes</a>
+                          <br>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-          <h2 class="text-center">
-              <script src="{{ url_for("static", filename="js/encrypted_mailto.js") }}"></script>
+      <!-- Contact Section -->
+      <section id="contact">
+          <div class="container">
+              <h2 class="text-center">
+                  <script src="{{ url_for("static", filename="js/encrypted_mailto.js") }}"></script>{{ contact_message }}</a>
               <noscript>Sorry, you need to have Javascript enabled to write an e-mail.</noscript>
-          </h2>
-        <hr class="star-primary">
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center">
-      <div class="footer-above">
-        <div class="container">
-          <div class="row">
-            <div class="footer-col col-md-4">
-              <h3>Location</h3>
-              <p>{{ location | safe }}</p>
-            </div>
-            <div class="footer-col col-md-4">
-                <h3>Follow us</h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a class="btn-social btn-outline" href="#">
-                            <i class="fa fa-fw fa-facebook"></i>
-                        </a>
-                    </li>
-                    <!-- <li class="list-inline-item">
-                         <a class="btn-social btn-outline" href="#">
-                         <i class="fa fa-fw fa-google-plus"></i>
-                         </a>
-                         </li> -->
-                    <li class="list-inline-item">
-                        <a class="btn-social btn-outline" href="#">
-                            <i class="fa fa-fw fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="btn-social btn-outline" href="#">
-                            <i class="fa fa-fw fa-twitter"></i>
-                        </a>
-                    </li>
-                    <!-- <li class="list-inline-item">
-                         <a class="btn-social btn-outline" href="#">
-                         <i class="fa fa-fw fa-linkedin"></i>
-                         </a>
-                         </li>
-                         <li class="list-inline-item">
-                         <a class="btn-social btn-outline" href="#">
-                         <i class="fa fa-fw fa-dribbble"></i>
-                         </a>
-                         </li> -->
-                </ul>
-            </div>
-            <div class="footer-col col-md-4">
-              <h3>About {{ name }}</h3>
-              <p>{{ personal_bit | safe }}</p>
-            </div>
+              </h2>
+              <hr class="star-primary">
           </div>
-        </div>
+      </section>
+
+      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+      <div class="scroll-top d-lg-none">
+          <a class="btn btn-primary js-scroll-trigger" href="#page-top">
+              <i class="fa fa-chevron-up"></i>
+          </a>
       </div>
-      <div class="footer-below">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              {{ copyleft | safe }} 
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top d-lg-none">
-      <a class="btn btn-primary js-scroll-trigger" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
-    </div>
+      {# footer #}
+      {% include "footer.html" %}
 
-    <!-- placeholder for including {{ cards }} content -->
+      <!-- Bootstrap core JavaScript -->
+      <script src="{{ url_for("static", filename="vendor/jquery/jquery.min.js") }}"></script>
+      <script src="{{ url_for("static", filename="vendor/popper/popper.min.js") }}"></script>
+      <script src="{{ url_for("static", filename="vendor/bootstrap/js/bootstrap.min.js") }}"></script>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ url_for("static", filename="vendor/jquery/jquery.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="vendor/popper/popper.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="vendor/bootstrap/js/bootstrap.min.js") }}"></script>
+      <!-- Plugin JavaScript -->
+      <script src="{{ url_for("static", filename="vendor/jquery-easing/jquery.easing.min.js") }}"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="{{ url_for("static", filename="vendor/jquery-easing/jquery.easing.min.js") }}"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="{{ url_for("static", filename="js/jqBootstrapValidation.js") }}"></script>
-    <script src="{{ url_for("static", filename="js/contact_me.js") }}"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="{{ url_for("static", filename="js/freelancer.min.js") }}"></script>
+      <!-- Contact Form JavaScript -->
+      <script src="{{ url_for("static", filename="js/jqBootstrapValidation.js") }}"></script>
+      <!-- <script src="{{ url_for("static", filename="js/contact_me.js") }}"></script>
+      -->
+      <!-- Custom scripts for this template -->
+      <script src="{{ url_for("static", filename="js/freelancer.min.js") }}"></script>
 
   </body>
 

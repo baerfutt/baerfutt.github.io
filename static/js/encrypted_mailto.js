@@ -17,6 +17,6 @@
           link += (key.charAt(ltr))
       }
   }
-  document.write("<a href='mailto:"+link+"'>Learn Bærfutt</a>")
+  document.write("<a href='mailto:"+link+"'>")
 }
 }).call(this);

@@ -3,6 +3,9 @@
 import os
 
 
+from content_parsers import convert_org_to_html
+
+
 def parent_dir(path):
     '''Return the parent of a directory.'''
     return os.path.abspath(os.path.join(path, os.pardir))
@@ -23,6 +26,8 @@ FREEZER_DESTINATION = APP_DIR
 
 FREEZER_BASE_URL = "http://localhost/{0}".format(REPO_NAME)
 FREEZER_REMOVE_EXTRA_FILES = False
+
+FLATPAGES_HTML_RENDERER = convert_org_to_html
 
 FLATPAGES_MARKDOWN_EXTENSIONS = []
 FLATPAGES_ROOT = os.path.join(APP_DIR, 'content')

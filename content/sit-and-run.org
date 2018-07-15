@@ -1,4 +1,4 @@
-#+TITLE: Upcoming Trainings, Workshops, & Sip+Runs
+#+TITLE: Upcoming
 #+AUTHOR: Baerfutt
 #+DATE: 2018-07-12
 #+LANGUAGE: en

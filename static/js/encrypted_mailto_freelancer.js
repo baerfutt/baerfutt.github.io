@@ -17,6 +17,6 @@
           link += (key.charAt(ltr))
       }
   }
-  document.write("<a class=\"nav-link js-scroll-trigger\" href=\"mailto:"+link+"\">Write me an e-mail</a>")
+  document.write("<a class=\"nav-link js-scroll-trigger\" href=\"mailto:"+link+"\">")
 }
 }).call(this);
