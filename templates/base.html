@@ -5,7 +5,7 @@
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block page_title %}{{ title }}{% endblock %}</title>
+        <title>{% block page_title %}{{ page_title }}{% endblock %}</title>
         <meta name="description" content="{{ description }}">
         <meta name="author" content="{{ author }}">
         
@@ -44,7 +44,7 @@
                         <br>
                         <li class="nav-item">
                             <script src="{{ url_for("static", filename="js/encrypted_mailto_navbar.js") }}"></script>
-                <noscript><a class="nav-link js-scroll-trigger">Please enable Javascript to write an e-mail</a></noscript>
+                            <noscript><a class="nav-link js-scroll-trigger">Please enable Javascript to write an e-mail</a></noscript>
                         </li>
                     </ul>
                 </div>
@@ -57,24 +57,46 @@
                 <img class="img-fluid" src="{{ url_for("static", filename=header_pic) }}" alt="{{ header_pic_alt if header_pic_alt }}"> 
                 {% endif %}
                 <div class="name">
-                    <h1>{{ date ~ ':' if date}} {{ title }}</h1>
+                    <h1>{{ date ~ ':' if date}} {{ title if title is defined else page_title }}</h1>
                     <hr class="star-light">
                 </div>
             </div>
         </header>
 
 
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-8 mx-auto">
-                    <div class="modal-body">
-                        <div class="content" role="main">
-                            {% block content %}{% endblock %}
-                        </div> 
-                    </div>
+        <section class="default">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 mx-auto">
+                        {% block content %}{% endblock %}
+                        <hr class="star-primary">
+                        <h2>
+                            <!-- <script src="{{ url_for("static", filename="js/encrypted_mailto.js") }}"></script>{{ contact_message }}</a> -->
+                            <script> 
+                             coded = "zSwy3.Z.v3tk@mBywT.NvB"
+                             key = "mVtvcY1pASa7lGnIKfQ94dBUJqNuR2jXyHTb3iDFgOeoW8Cxhr5EZMk6Lz0wsP"
+                             shift=coded.length
+                             link=""
+                             for (i=0; i<coded.length; i++) {
+                                 if (key.indexOf(coded.charAt(i))==-1) {
+                                     ltr = coded.charAt(i)
+                                     link += (ltr)
+                                 }
+                                 else {     
+                                     ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+                                     link += (key.charAt(ltr))
+                                 }
+                             }
+                             document.write("<a class='btn-primary btn-lg btn-outline' href='mailto:"+link+"?subject={{ email_subject | urlencode }}&body={{ email_body | urlencode }}'>{{ feedback_message if past is defined and past else contact_message }}</a>")
+                            </script>
+                            <noscript>Sorry, you need to have Javascript enabled to write an e-mail.</noscript>
+                        </h2>
+                    </div> 
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Contact Section -->
 
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
         <div class="scroll-top d-lg-none">

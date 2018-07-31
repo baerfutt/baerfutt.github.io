@@ -8,6 +8,10 @@ import sys
 import os
 import inspect
 
+# Python 2: urlencoding
+# from urllib import quote_plus
+# Python 3
+# from urllib.parse import quote_plus
 
 from flask import Flask
 from flask_frozen import Freezer
@@ -40,34 +44,51 @@ default_content = {
     'personal_bit': 'Equiping you with the skills and \
     knowledge for Natural Movement',
     'mission': u'Bærfutt Mission',
-    'contact_message': 'Get directly in touch',
+    'contact_message': 'Get in touch',
     'copyleft': u'Copyright &copy; Bærfutt %i' % time.localtime().tm_year,
     'name': u'Bærfutt',
     'location': 'Zurich, Switzerland<br>8053',
-    'title': 'Natural Movement for Humans',
-    'description': 'Coaching and training for barefoot running, minimalist \
-    running. Product reviews development of shoes, sandals, other footware, \
-    and relevant innovations.'
+    'page_title': 'Baerfutt Running',
+    'description': 'Natural Movement for Humans. Coaching and training for \
+    barefoot running, minimalist running. Product reviews development of \
+    shoes, sandals, other footware,  and relevant innovations.',
 }
 
-page_content = {
+page_content = {}
+special_content = {
     'home': {
         'template': 'home.html',
         'header_pic': "img/header_pic.jpg",
+        'email_subject': 'From Baerfutt Homepage: ',
+        'email_body': 'Dear Baerfutt,\nI want to learn to run barefoot! \
+        \nKind Regards,\nMe!',
     },
     'event': {
         'template': 'page.html',
         'blurb': 'Event:',
+        'email_subject': 'Baerfutt: %s %s',
+        'email_body': 'Please give me your information.\nName: \nTelephone \
+        Number: \nNormal running distance: ',
+        'contact_message': 'Sign me up',
+        'feedback_message': 'Give feedback',
     },
     'info': {
         'template': 'page.html',
+        'email_subject': 'From Baerfutt Homepage: ',
+        'email_body': 'Dear Baerfutt,\nI want some more info. \
+        \nKind Regards,\nMe!',
     },
     'archive': {
         'template': 'archive.html',
+        'title': 'Baerfutt Event Archive',
+        'email_subject': 'From Baerfutt Homepage: ',
+        'email_body': 'Dear Baerfutt,\nI want some more info. \
+        \nKind Regards,\nMe!',
     }
 }
-for route in page_content:
-    page_content[route].update(default_content)
+for route in special_content:
+    page_content[route] = default_content.copy()
+    page_content[route].update(special_content[route])
 
 
 # Views
@@ -94,7 +115,7 @@ def home():
 
 @app.route('/info/<path:path>/')
 def info(path):
-    # 'path' is the filename of a page, without the file extension
+    # 'path' is the filename of a page, without the file[route] extension
     route = whoami()
     singlepage = pages.get_or_404(path)
     # pdb.set_trace()
@@ -112,10 +133,14 @@ def event(path):
     route = whoami()
     # description
     page_content[route].update(singlepage.meta)
+    page_content[route]['email_subject'] = special_content[route]['email_subject'] % (
+        singlepage.meta['title'], singlepage.meta['date'].strftime("%F"))
+    # page_content[route]['email_body'] = page_content[route]['email_body']
     # pdb.set_trace()
     return render_template(
         page_content[route]['template'],
         page=singlepage,
+        past=singlepage.meta['date'] < datetime.date.today(),
         **page_content[route]
     )
 
@@ -125,11 +150,11 @@ def archive():
     route = whoami()
     past = [page for page in pages if 'date' in page.meta
             and page.meta['date']
-            < datetime.date(*time.localtime(time.time()-14*86400)[0:3])]
+            < datetime.date(*time.localtime(time.time()-10*86400)[0:3])]
     sorted_events = sorted(past, reverse=True,
                            key=lambda event: event.meta['date'])
     keywords = set(event.meta['description'] for event in past
-                   if event.meta['description'])
+                   if 'description' in event.meta)
     # pdb.set_trace()
     return render_template(
         page_content[route]['template'],

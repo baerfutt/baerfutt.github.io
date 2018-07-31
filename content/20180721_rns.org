@@ -1,9 +1,22 @@
 #+TITLE: Run&Sip
 #+AUTHOR: Baerfutt
-#+DATE: 2018-07-21
+#+DATE: 2018-07-20
 #+LANGUAGE: en
 #+CREATOR: 
 
 
-* Zürich <2018-07-21 Sat> 
-  Runabout
+* Program
+  1. Welcome
+  2. Run an hour to a chosen restaurant
+     - bQm Kultur Café & Bar
+     - El Lokal
+     - Picnic
+  3. Have a sip or two
+
+* Time & Location
+  - Starting Address:
+    - In Zurich
+  - Time:
+    - 2018-07-20 Fri 18:30
+  - More details follow after successful registration
+

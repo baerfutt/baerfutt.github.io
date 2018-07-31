@@ -5,8 +5,8 @@
 
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Natural Movement for Humans</title>
-      <meta name="description" content="Coaching and training for barefoot running, minimalist     running. Product reviews development of shoes, sandals, other footware,     and relevant innovations.">
+      <title>Baerfutt Running</title>
+      <meta name="description" content="Natural Movement for Humans. Coaching and training for     barefoot running, minimalist running. Product reviews development of     shoes, sandals, other footware,  and relevant innovations.">
       <meta name="author" content="">
 
       <!-- Bootstrap core CSS -->
@@ -74,15 +74,9 @@
               <div class="row text-center">
                   <div class="col-lg mx-auto">
                       
-                      <a class="btn btn-lg btn-outline" href="/baerfutt.github.io/events/20180721_ws/">
-                          2018-07-21:
-                          Workshops
-                      </a>
-                      <br>
-                      
-                      <a class="btn btn-lg btn-outline" href="/baerfutt.github.io/events/20180721_rns/">
-                          2018-07-21:
-                          Run&amp;Sip
+                      <a class="btn btn-lg btn-outline" href="/baerfutt.github.io/events/20180810_ws/">
+                          2018-08-10:
+                          Baerfutt Running Workshop
                       </a>
                       <br>
                       
@@ -98,9 +92,15 @@
               <div class="row text-center">
                   <div class="col-lg mx-auto">
                       
-                      <a class="btn btn-lg btn-outline" href="/baerfutt.github.io/events/sit-and-run/">
-                          2018-07-12:
-                          Upcoming
+                      <a class="btn btn-lg btn-outline" href="/baerfutt.github.io/events/20180721_rns/">
+                          2018-07-20:
+                          Run&amp;Sip
+                      </a>
+                      <br>
+                      
+                      <a class="btn btn-lg btn-outline" href="/baerfutt.github.io/events/20180719_ws/">
+                          2018-07-19:
+                          Baerfutt Running Workshop
                       </a>
                       <br>
                       
@@ -139,10 +139,32 @@
       <section id="contact">
           <div class="container">
               <h2 class="text-center">
-                  <script src="/baerfutt.github.io/static/js/encrypted_mailto.js"></script>Get directly in touch</a>
+                  <!-- <script src="/baerfutt.github.io/static/js/encrypted_mailto.js"></script>Get in touch</a> -->
+                  <script> 
+                   coded = "zSwy3.Z.v3tk@mBywT.NvB"
+                   key = "mVtvcY1pASa7lGnIKfQ94dBUJqNuR2jXyHTb3iDFgOeoW8Cxhr5EZMk6Lz0wsP"
+                   shift=coded.length
+                   link=""
+                   for (i=0; i<coded.length; i++) {
+                       if (key.indexOf(coded.charAt(i))==-1) {
+                           ltr = coded.charAt(i)
+                           link += (ltr)
+                       }
+                       else {     
+                           ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+                           link += (key.charAt(ltr))
+                       }
+                   }
+                   document.write("<a class='btn-primary btn-lg btn-outline' href='mailto:"+link+"?subject=From%20Baerfutt%20Homepage%3A%20&body=Dear%20Baerfutt%2C%0AI%20want%20to%20learn%20to%20run%20barefoot%21%20%20%20%20%20%20%20%20%20%0AKind%20Regards%2C%0AMe%21'>Get in touch</a>")
+                   /* document.write("<a href='mailto:"+link+"?subject="+encodeURIComponent("From Baerfutt Homepage: ")+ "&body=" + */
+                   /* encodeURIComponent("Dear Baerfutt,
+I want to learn to run barefoot!         
+Kind Regards,
+Me!")+"'>Get in touch</a>") */
+                  </script>
               <noscript>Sorry, you need to have Javascript enabled to write an e-mail.</noscript>
               </h2>
-              <hr class="star-primary">
+              <!-- <hr class="star-primary"> -->
           </div>
       </section>
 
