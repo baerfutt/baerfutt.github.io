@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Baerfutt Running</title>
-        <meta name="description" content="Natural Movement for Humans. Coaching and training for     barefoot running, minimalist running. Product reviews development of     shoes, sandals, other footware,  and relevant innovations.">
+        <meta name="description" content="Natural Running for Humans. Coaching and training for     barefoot running, minimalist running. Product reviews development of     shoes, sandals, other footware,  and relevant innovations.">
         <meta name="author" content="">
         
         <!-- Bootstrap core CSS -->
@@ -38,7 +38,23 @@
                         </li>
                         <br>
                         <li class="nav-item">
-                            <script src="/baerfutt.github.io/static/js/encrypted_mailto_navbar.js"></script>
+                            <script> 
+                             coded = "zSwy3.Z.v3tk@mBywT.NvB"
+                             key = "mVtvcY1pASa7lGnIKfQ94dBUJqNuR2jXyHTb3iDFgOeoW8Cxhr5EZMk6Lz0wsP"
+                             shift=coded.length
+                             link=""
+                             for (i=0; i<coded.length; i++) {
+                                 if (key.indexOf(coded.charAt(i))==-1) {
+                                     ltr = coded.charAt(i)
+                                     link += (ltr)
+                                 }
+                                 else {     
+                                     ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+                                     link += (key.charAt(ltr))
+                                 }
+                             }
+                             document.write("<a class='nav-link js-scroll-trigger' href='mailto:"+link+"?subject=From%20Baerfutt%20Homepage%3A%20&body=Dear%20Baerfutt%2C%0AI%20want%20some%20more%20info.%20%20%20%20%20%20%20%20%20%0AKind%20Regards%2C%0AMe%21'>Get in touch</a>")
+                            </script>
                             <noscript><a class="nav-link js-scroll-trigger">Please enable Javascript to write an e-mail</a></noscript>
                         </li>
                     </ul>
@@ -62,6 +78,8 @@
                 <div class="row text-center">
                     <div class="col-lg-8 mx-auto">
                         
+                        
+                        
 
 <a class="btn-primary btn-lg btn-outline" href="/baerfutt.github.io/events/20180721_rns/">
     2018-07-20
@@ -78,6 +96,7 @@
 <br>
 
 
+                        
                         <hr class="star-primary">
                         <h2>
                             <!-- <script src="/baerfutt.github.io/static/js/encrypted_mailto.js"></script>Get in touch</a> -->
@@ -162,7 +181,7 @@
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Bærfutt Mission</h3>
-                    <p>Equiping you with the skills and     knowledge for Natural Movement</p>
+                    <p>Equiping you with the skills and     knowledge for Natural Running</p>
                 </div>
             </div>
         </div>

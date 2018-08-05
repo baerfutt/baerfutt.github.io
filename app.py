@@ -42,16 +42,17 @@ pages = FlatOrgPages(app)
 
 default_content = {
     'personal_bit': 'Equiping you with the skills and \
-    knowledge for Natural Movement',
+    knowledge for Natural Running',
     'mission': u'Bærfutt Mission',
     'contact_message': 'Get in touch',
     'copyleft': u'Copyright &copy; Bærfutt %i' % time.localtime().tm_year,
     'name': u'Bærfutt',
     'location': 'Zurich, Switzerland<br>8053',
     'page_title': 'Baerfutt Running',
-    'description': 'Natural Movement for Humans. Coaching and training for \
+    'description': 'Natural Running for Humans. Coaching and training for \
     barefoot running, minimalist running. Product reviews development of \
     shoes, sandals, other footware,  and relevant innovations.',
+    'slogan': 'Natural Running for Humans'
 }
 
 page_content = {}
