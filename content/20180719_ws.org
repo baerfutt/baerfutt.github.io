@@ -1,4 +1,4 @@
-#+TITLE: Baerfutt Running Workshop
+#+TITLE: Running Workshop
 #+AUTHOR: Baerfutt
 #+DATE: 2018-07-19
 #+LANGUAGE: en
@@ -18,6 +18,6 @@
   6. Summary
 
 * Time & Location
-  - *Starting Address*: To be determined.
+  - *Starting Address*: Somewhere in Zurich, exact location upon registration.
   - *Time*: 2018-07-19 Fri 18:30
   - More details follow after successful registration

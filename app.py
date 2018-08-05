@@ -132,8 +132,12 @@ def event(path):
     singlepage = pages.get_or_404(path)
     route = whoami()
     # description
+    if 'Baerfutt' not in singlepage.meta['title']:
+        singlepage.meta['title'] = 'Baerfutt ' + \
+                                   singlepage.meta['title']
     page_content[route].update(singlepage.meta)
-    page_content[route]['email_subject'] = special_content[route]['email_subject'] % (
+    page_content[route]['email_subject'] = \
+        special_content[route]['email_subject'] % (
         singlepage.meta['title'], singlepage.meta['date'].strftime("%F"))
     # page_content[route]['email_body'] = page_content[route]['email_body']
     # pdb.set_trace()
