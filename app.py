@@ -59,7 +59,8 @@ page_content = {}
 special_content = {
     'home': {
         'template': 'home.html',
-        'header_pic': "img/header_pic.jpg",
+        'header_pic': "img/logo.svg",
+        # 'header_pic': "img/header_pic.jpg",
         'email_subject': 'From Baerfutt Homepage: ',
         'email_body': 'Dear Baerfutt,\nI want to learn to run barefoot! \
         \nKind Regards,\nMe!',
