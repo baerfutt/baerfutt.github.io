@@ -104,6 +104,7 @@ def home():
                            key=lambda event: event.meta['date'])
     upcoming = [page for page in sorted_events if 'date' in page.meta
                 and page.meta['date'] >= datetime.date.today()]
+    upcoming.reverse()
     past_events = [event for event in sorted_events if event not in upcoming]
     # pdb.set_trace()
     return render_template(
