@@ -1,2 +1,2 @@
 * Description
- Content served to baerfutt dot org.
+ Content served to https://baerfutt.org
