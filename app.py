@@ -105,7 +105,9 @@ def home():
     upcoming = [page for page in sorted_events if 'date' in page.meta
                 and page.meta['date'] >= datetime.date.today()]
     upcoming.reverse()
-    past_events = [event for event in sorted_events if event not in upcoming]
+    past_events = [event for event in sorted_events if event not in upcoming
+                   and event.meta['date']
+                   >= datetime.date(*time.localtime(time.time()-30*86400)[0:3])]
     # pdb.set_trace()
     return render_template(
         page_content[route]['template'],
@@ -157,7 +159,7 @@ def archive():
     route = whoami()
     past = [page for page in pages if 'date' in page.meta
             and page.meta['date']
-            < datetime.date(*time.localtime(time.time()-10*86400)[0:3])]
+            < datetime.date(*time.localtime(time.time()-30*86400)[0:3])]
     sorted_events = sorted(past, reverse=True,
                            key=lambda event: event.meta['date'])
     keywords = set(event.meta['description'] for event in past
