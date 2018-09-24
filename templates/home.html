@@ -88,28 +88,28 @@
           </div>
       </section>
       
-      <section class="success" id="recent">
-          <div class="container">
-              <h2 class="text-center">Recent Events</h2>
-              <hr class="star-light">
-              <div class="row text-center">
-                  <div class="col-lg mx-auto">
-                      {% for event in past_events %}
-                      <a class="btn btn-lg btn-outline" href="{{ url_for('event', path=event.path) }}">
-                          {{ event.meta.date }}:
-                          {{ event.meta.title }}
-                      </a>
-                      <br>
-                      {% endfor %}
-                      <a class="btn btn-lg btn-outline" href="{{ url_for('archive') }}">
-                          Archive
-                      </a>
-                      <br>
-                  </div>
-              </div>
-          </div>
-      </section>
-
+      <!-- <section class="success" id="recent">
+           <div class="container">
+           <h2 class="text-center">Recent Events</h2>
+           <hr class="star-light">
+           <div class="row text-center">
+           <div class="col-lg mx-auto">
+           {% for event in past_events %}
+           <a class="btn btn-lg btn-outline" href="{{ url_for('event', path=event.path) }}">
+           {{ event.meta.date }}:
+           {{ event.meta.title }}
+           </a>
+           <br>
+           {% endfor %}
+           <a class="btn btn-lg btn-outline" href="{{ url_for('archive') }}">
+           Archive
+           </a>
+           <br>
+           </div>
+           </div>
+           </div>
+           </section>
+      -->
       <!-- About Section -->
       <section class="success" id="about">
           <div class="container">
