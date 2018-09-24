@@ -41,17 +41,17 @@ pages = FlatOrgPages(app)
 # pdb.set_trace()
 
 default_content = {
-    'personal_bit': 'Equiping you with the skills and \
-    knowledge for Natural Running',
+    'personal_bit': '''Equiping you with the skills and
+    knowledge for Natural Running''',
     'mission': u'Bærfutt Mission',
     'contact_message': 'Get in touch',
     'copyleft': u'Copyright &copy; Bærfutt %i' % time.localtime().tm_year,
     'name': u'Bærfutt',
     'location': 'Zurich, Switzerland<br>8053',
     'page_title': 'Baerfutt Running',
-    'description': 'Natural Running for Humans. Coaching and training for \
-    barefoot running, minimalist running. Product reviews development of \
-    shoes, sandals, other footware,  and relevant innovations.',
+    'description': '''Natural Running for Humans. Coaching and training for
+    barefoot running, minimalist running. Product reviews development of
+    shoes, sandals, other footware,  and relevant innovations.''',
     'slogan': 'Natural Running for Humans'
 }
 
@@ -62,31 +62,37 @@ special_content = {
         'header_pic': "img/logo.svg",
         # 'header_pic': "img/header_pic.jpg",
         'email_subject': 'From Baerfutt Homepage: ',
-        'email_body': 'Dear Baerfutt,\nI want to learn to run barefoot! \
-        \nKind Regards,\nMe!',
+        'email_body': '''Dear Baerfutt,\nI want to learn to run barefoot!
+        \nKind Regards,\nMe!''',
     },
     'event': {
         'template': 'page.html',
         'blurb': 'Event:',
         'email_subject': 'Baerfutt: %s %s',
-        'email_body': 'Please give me your information.\nName: \nTelephone \
-        Number: \nNormal running distance: ',
+        'email_body': '''Please give me your information.\nName: \nTelephone
+        Number: \nNormal running distance: ''',
         'contact_message': 'Sign me up',
         'feedback_message': 'Give feedback',
     },
     'info': {
         'template': 'page.html',
         'email_subject': 'From Baerfutt Homepage: ',
-        'email_body': 'Dear Baerfutt,\nI want some more info. \
-        \nKind Regards,\nMe!',
+        'email_body': '''Dear Baerfutt,\nI want some more info.
+        \nKind Regards,\nMe!''',
     },
     'archive': {
         'template': 'archive.html',
         'title': 'Baerfutt Event Archive',
         'email_subject': 'From Baerfutt Homepage: ',
-        'email_body': 'Dear Baerfutt,\nI want some more info. \
-        \nKind Regards,\nMe!',
-    }
+        'email_body': '''Dear Baerfutt,\nI want some more info.
+        \nKind Regards,\nMe!''',
+    },
+    'impressum': {
+        'template': 'page.html',
+        'title': 'Impressum / Datenschutz',
+        'email_subject': 'Über das Impressum',
+        'email_body': '',
+    },
 }
 for route in special_content:
     page_content[route] = default_content.copy()
@@ -97,7 +103,8 @@ for route in special_content:
 @app.route('/')
 def home():
     route = whoami()
-    info = [page for page in pages if 'date' not in page.meta]
+    info = [page for page in pages if 'date' not in page.meta
+            and 'Impressum' not in page.meta['title']]
     events = [page for page in pages if 'date' in page.meta]
     # Sort pages by date
     sorted_events = sorted(events, reverse=True,
@@ -120,7 +127,7 @@ def home():
 
 @app.route('/info/<path:path>/')
 def info(path):
-    # 'path' is the filename of a page, without the file[route] extension
+    # 'path' is the filename of a page, without the file extension
     route = whoami()
     singlepage = pages.get_or_404(path)
     # pdb.set_trace()
@@ -169,6 +176,18 @@ def archive():
         page_content[route]['template'],
         events=sorted_events,
         keywords=keywords,
+        **page_content[route]
+    )
+
+
+@app.route('/impressum/')
+def impressum():
+    singlepage = pages.get_or_404('impressum')
+    route = whoami()
+    # pdb.set_trace()
+    return render_template(
+        page_content[route]['template'],
+        page=singlepage,
         **page_content[route]
     )
 
