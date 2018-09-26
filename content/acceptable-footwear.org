@@ -3,13 +3,22 @@
 #+LANGUAGE: en
 #+CREATOR: 
 
+* Disclaimers
+*Physical*: these recommendations serve to illuminate /shoes/ which help the foot work.  There is no substitute for going barefoot when running! *None*! 
 
-* Criteria
-  - Force the foot to work (pronate/load/grapple) when walking and running
-  - Zero drop/flat sole
+*Financial*: By clicking on the links below and purchasing anything, I get a small kickback which I use to fund further workshops. Thank you!
+
+
+
+* Criteria for following recommendations
+  - Very flexible sole to encourage the foot to pronate, load, and grapple
+    while walking and running, i.e.
+    - *allow the foot be a foot*
+  - No high-heels
   - Lightweight
+  - Inexpensive
 
-* XeroShoes
+* Recommendation: XeroShoes
   - My favorite: Huarache-style DIY sandals
   - Their other shoes are great too
   - Use this link please: https://xeroshoes.com/go/bare
@@ -17,5 +26,12 @@
 * Other footwear
 I am currently evaluating other footwear. If you have any suggestions drop me a line please.
 
-* Disclaimer
-By clicking on the links above and purchasing anything, I get a small kickback which I use to fund further workshops. Thank you!
+Interesting tested shoes:
+  - vivobarefoot
+    - So far: good /normal/ shoes 
+    - the sole is generally too stiff
+  - vibram fivefingers
+    - good ground connection
+    - stink horribly without a regular vinegar treatment
+    - Expensive relative to their durability
+

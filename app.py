@@ -130,7 +130,9 @@ def home():
 def info(path):
     # 'path' is the filename of a page, without the file extension
     route = whoami()
+    # set title etc. from org-file
     singlepage = pages.get_or_404(path)
+    page_content[route].update(singlepage.meta)
     # pdb.set_trace()
     return render_template(
         page_content[route]['template'],
@@ -148,6 +150,7 @@ def event(path):
     if 'Baerfutt' not in singlepage.meta['title']:
         singlepage.meta['title'] = 'Baerfutt ' + \
                                    singlepage.meta['title']
+    # set title etc. from org-file
     page_content[route].update(singlepage.meta)
     page_content[route]['email_subject'] = \
         special_content[route]['email_subject'] % (
