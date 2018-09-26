@@ -19,5 +19,5 @@
 
 * Time & Location
   - *Starting Address*: Somewhere in Zurich, exact location upon registration.
-  - *Time*: 2018-09-28 Fri 18:30
+  - *Time*: 2018-09-28 Fri 18:00
   - More details follow after registration
