@@ -11,6 +11,7 @@
   - Davis, Irene S., Hannah M. Rice, and Scott C. Wearing. 2017. “Why Forefoot Striking in Minimal Shoes Might Positively Change the Course of Running Injuries.” Journal of Sport and Health Science 6 (2): 154–61. https://doi.org/10.1016/j.jshs.2017.03.013.
   - Miller, Elizabeth E., Katherine K. Whitcome, Daniel E. Lieberman, Heather L. Norton, and Rachael E. Dyer. 2014. “The Effect of Minimal Shoes on Arch Structure and Intrinsic Foot Muscle Strength.” Journal of Sport and Health Science 3 (2): 74–85. https://doi.org/10.1016/j.jshs.2014.03.011.
   - Perl, Daniel P., Adam I. Daoud, and Daniel E. Lieberman. 2012. “Effects of Footwear and Strike Type on Running Economy:” Medicine & Science in Sports & Exercise 44 (7): 1335–43. https://doi.org/10.1249/MSS.0b013e318247989e.
+  - Warne, Joe P., and Allison H. Gruber. 2017. “Transitioning to Minimal Footwear: A Systematic Review of Methods and Future Clinical Recommendations.” Sports Medicine - Open 3 (1). https://doi.org/10.1186/s40798-017-0096-x.
 * What does the physics of running look like?
   - Lieberman, Daniel E., Madhusudhan Venkadesan, William A. Werbel, Adam I. Daoud, Susan D’Andrea, Irene S. Davis, Robert Ojiambo Mang’Eni, and Yannis Pitsiladis. 2010. “Foot Strike Patterns and Collision Forces in Habitually Barefoot versus Shod Runners.” Nature 463 (7280): 531–35. https://doi.org/10.1038/nature08723.
   - Divert, C., G. Mornieux, H. Baur, F. Mayer, and A. Belli. 2005. “Mechanical Comparison of Barefoot and Shod Running.” International Journal of Sports Medicine 26 (7): 593–98. https://doi.org/10.1055/s-2004-821327.
@@ -27,7 +28,6 @@
 
   - Bonacci, Jason, Philo U Saunders, Amy Hicks, Timo Rantalainen, Bill (Guglielmo) T Vicenzino, and Wayne Spratford. 2013. “Running in a Minimalist and Lightweight Shoe Is Not the Same as Running Barefoot: A Biomechanical Study.” British Journal of Sports Medicine 47 (6): 387–92. https://doi.org/10.1136/bjsports-2012-091837.
   - Bonacci, Jason, Bill Vicenzino, Wayne Spratford, and Paul Collins. 2014. “Take Your Shoes off to Reduce Patellofemoral Joint Stress during Running.” British Journal of Sports Medicine 48 (6): 425–28. https://doi.org/10.1136/bjsports-2013-092160.
-  - Warne, Joe P., and Allison H. Gruber. 2017. “Transitioning to Minimal Footwear: A Systematic Review of Methods and Future Clinical Recommendations.” Sports Medicine - Open 3 (1). https://doi.org/10.1186/s40798-017-0096-x.
 * Inconclusive studies
 
   - Hollander, Karsten, Christoph Heidt, Babette C. Van Der Zwaard, Klaus-Michael Braumann, and Astrid Zech. 2017. “Long-Term Effects of Habitual Barefoot Running and Walking: A Systematic Review.” Medicine & Science in Sports & Exercise 49 (4): 752–62. https://doi.org/10.1249/MSS.0000000000001141.
