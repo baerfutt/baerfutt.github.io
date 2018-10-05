@@ -74,15 +74,15 @@ special_content = {
     },
     'info': {
         'template': 'page.html',
-        'email_subject': 'From Baerfutt Homepage: ',
+        'email_subject': 'I want more information: ',
         'email_body': 'Dear Baerfutt,\nI want some more info.'
         '\nKind Regards,\nMe!',
     },
     'archive': {
         'template': 'archive.html',
         'title': 'Baerfutt Event Archive',
-        'email_subject': 'From Baerfutt Homepage: ',
-        'email_body': 'Dear Baerfutt,\nI want some more info.'
+        'email_subject': 'From Baerfutt archive: ',
+        'email_body': 'Dear Baerfutt,\nWhat about this event archive?'
         '\nKind Regards,\nMe!',
     },
     'impressum': {
