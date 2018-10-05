@@ -152,9 +152,9 @@ def event(path):
                                    singlepage.meta['title']
     # set title etc. from org-file
     page_content[route].update(singlepage.meta)
-    page_content[route]['email_subject'] = \
-        special_content[route]['email_subject'] % (
-        singlepage.meta['title'], singlepage.meta['date'].strftime("%F"))
+    # page_content[route]['email_subject'] = \
+    #     special_content[route]['email_subject'] % (
+    #     singlepage.meta['title'], singlepage.meta['date'].strftime("%F"))
     # page_content[route]['email_body'] = page_content[route]['email_body']
     # pdb.set_trace()
     return render_template(

@@ -60,7 +60,7 @@
                                      link += (key.charAt(ltr))
                                  }
                              }
-                             document.write("<a class='nav-link js-scroll-trigger' href='mailto:"+link+"?subject={{ email_subject | urlencode }}&body={{ email_body | urlencode }}'>{{ feedback_message if past is defined and past else contact_message }}</a>")
+                             document.write("<a class='nav-link js-scroll-trigger' href='mailto:"+link+"?subject={{ 'RE: ' ~ title if title is defined else page_title | urlencode }}&body={{ email_body | urlencode }}'>{{ feedback_message if past is defined and past else contact_message }}</a>")
                             </script>
                             <noscript><a class="nav-link js-scroll-trigger">Please enable Javascript to write an e-mail</a></noscript>
                         </li>
@@ -108,7 +108,7 @@
                                      link += (key.charAt(ltr))
                                  }
                              }
-                             document.write("<a class='btn-primary btn-lg btn-outline' href='mailto:"+link+"?subject={{ email_subject | urlencode }}&body={{ email_body | urlencode }}'>{{ feedback_message if past is defined and past else contact_message }}</a>")
+                             document.write("<a class='btn-primary btn-lg btn-outline' href='mailto:"+link+"?subject={{ 'RE: ' ~ title if title is defined else page_title | urlencode }}&body={{ email_body | urlencode }}'>{{ feedback_message if past is defined and past else contact_message }}</a>")
                             </script>
                             <noscript>Sorry, you need to have Javascript enabled to write an e-mail.</noscript>
                         </h2>
