@@ -2,8 +2,7 @@
 
 import os
 
-
-from content_parsers import convert_org_to_html
+from flask_flatorgpages import convert_org_to_html
 
 
 def parent_dir(path):

@@ -17,7 +17,7 @@ from flask import Flask
 from flask_frozen import Freezer
 from flask import render_template, url_for
 
-from content_parsers import FlatOrgPages
+from flask_flatorgpages import FlatOrgPages
 
 
 def whoami():
@@ -41,13 +41,13 @@ pages = FlatOrgPages(app)
 # pdb.set_trace()
 
 default_content = {
-    'personal_bit': 'Equiping you with the skills and'
+    'personal_bit': 'Equiping you with the skills and '
     'knowledge for Natural Running',
     'mission': u'Bærfutt Mission',
     'contact_message': 'Get in touch',
     'copyleft': u'Copyright &copy; Bærfutt %i' % time.localtime().tm_year,
     'name': u'Bærfutt',
-    'location': 'Zurich, Switzerland<br>8053',
+    'location': 'Rüschlikon, Switzerland<br>8803',
     'page_title': 'Baerfutt Running',
     'description': 'Natural Running for Humans. Coaching and training for'
     'barefoot running, minimalist running. Product reviews development of'

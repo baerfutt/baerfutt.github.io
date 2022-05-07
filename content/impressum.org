@@ -5,7 +5,7 @@
 * Impressum
 Der Inhalt dieser Webseite wurde von Brian J. Oney mit grösster Sorgfalt erstellt. 
 
-Adresse: Brian Oney | Carl-Spitteler-Str. 16 | 8053 Zürich | Schweiz
+Adresse: Brian Oney | Bahnhofstrasse 91 | 8803 Rüschlikon | Schweiz
 
 Email: brian PUNKT j PUNKT oney ÄT gmail PUNKT com
 
@@ -14,18 +14,18 @@ Email: brian PUNKT j PUNKT oney ÄT gmail PUNKT com
   - Angebote sind Kurse, Trainingstreffen oder Treffen die primär auf dieser
     Webseite angeboten werden.
   - Trainingsprogramme sind von der Organisation stammende Beschreibungen
-    möglicher Abläufe die dem Zweck der sportlichen Anpassung dienen.
+    möglicher Abläufe die dem Zweck des sportlichen Trainings dienen.
   - Die Organisation nennt sich Baerfutt.
   - Das männliche Geschlecht im folgenden Text gilt für alle Geschlechter.
   
 * Haftung für Angebot
 Auf dieser Webseite werden zu Ausbildungszwecken Programme angeboten. Diese
-Programme basieren auf wissenschaftliche Berichte und Erfahrung vom Autor. Der
-Einsatz vorgeschlagener Trainingsprogramme erfolgt under der eigenen
-Verantwortung und Gefahr.  Die Teilnahme an einer der Angebote erfolgt
-ausschliesslich unter der eigenen Verantwortung und Gefahr. Im Falle von
-Unfällen und Verletzungen haftet der Teilnehmer. Versicherung ist Sache des
-Teilnehmers.
+Programme basieren auf wissenschaftliche Berichte sowie auf Erfahrung des
+Autors. Der Einsatz vorgeschlagener Trainingsprogramme erfolgt unter der
+eigenen Verantwortung und Gefahr.  Die Teilnahme an einer der angeboten
+Trainings erfolgt ausschliesslich unter der eigenen Verantwortung und
+Gefahr. Im Falle von Unfällen und Verletzungen haftet der
+Teilnehmer. Versicherung ist Sache des Teilnehmers.
 
 * Haftung für Inhalte
 
@@ -53,7 +53,7 @@ entfernen.
 * Urheberrecht
 
 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
-unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+unterliegen dem Schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung,
 Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des
 Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors
 bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten,
@@ -68,10 +68,10 @@ entfernen.
 * Datenschutz
 
 Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener
-Daten möglich. Soweit auf unseren Seiten personenbezogene Daten
-(beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt
-dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne
-Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+Daten möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben
+werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis
+(beispielsweise eigene Sendung Ihrer Daten). Diese Daten werden ohne Ihre
+ausdrückliche Zustimmung nicht an Dritte weitergegeben.
 
 Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der
 Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser
